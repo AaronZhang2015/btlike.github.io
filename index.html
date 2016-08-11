@@ -37,13 +37,13 @@
 
 <ul>
 <li>高性能<br>
-<code>单核,768MB的[VPS](https://www.vultr.com/pricing/)上，每秒处理UDP请求超过12K，内存占用不超过100MB，每天抓取数千万去重infohash</code>
+<code>单核,768MB的</code><a href="https://www.vultr.com/pricing/">VPS</a><code>上，每秒处理UDP请求超过12K，内存占用不超过100MB</code>
 </li>
 <li>大容量<br>
-<code>采用Mysql分表存储,分16张表,设计容量6千万~8千万数据</code>
+<code>采用Mysql分表存储,设计容量6千万~8千万数据</code>
 </li>
 <li>全文搜索<br>
-<code>采用[elasticsearch](https://github.com/elastic/elasticsearch)实现全文索引和热度排序</code>
+<code>采用</code><a href="https://github.com/elastic/elasticsearch">Elasticsearch</a><code>实现全文索引和热度排序</code>
 </li>
 </ul>
 
@@ -74,7 +74,9 @@
 <ul>
 <li><code>安装 golang</code></li>
 <li><code>安装 mysql</code></li>
-<li><code>安装 [elasticsearch](https://github.com/elastic/elasticsearch)</code></li>
+<li>
+<code>安装</code> <a href="https://github.com/elastic/elasticsearch">Elasticsearch</a>
+</li>
 </ul>
 
 <h3>
@@ -109,10 +111,11 @@
 
 <ul>
 <li><code>从全网尽可能多的获取infohash</code></li>
-<li><code>从DHT网络，通过[BEP0009](http://www.bittorrent.org/beps/bep_0009.html)获取资源</code></li>
+<li>
+<code>从DHT网络，通过</code><a href="http://www.bittorrent.org/beps/bep_0009.html">BEP0009</a><code>获取资源</code>
+</li>
 <li><code>通过资源库查询资源，采用流量+带宽暴力遍历</code></li>
 <li><code>极力优化内存、CPU与带宽资源</code></li>
-<li><code>随着热门资源大部分被收录，每日更新资源数从数十万逐步降低到十来万</code></li>
 </ul>
 
 <h3>
