@@ -1,31 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
     <title>btlike BT搜索引擎 by btlike</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <header>
-      <div class="container">
+    <div class="wrapper">
+      <header>
         <h1>btlike BT搜索引擎</h1>
-        <h2>高性能、全功能</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/btlike" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
+        <p>高性能、全功能</p>
+        <p class="view"><a href="https://github.com/btlike">View the Project on GitHub <small>btlike</small></a></p>
+        <ul>
+          <li class="single"><a href="https://github.com/btlike/btlike.github.io">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h3>
 <a id="在线演示" class="anchor" href="#%E5%9C%A8%E7%BA%BF%E6%BC%94%E7%A4%BA" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>在线演示</h3>
 
@@ -37,11 +36,15 @@
 <a id="特性" class="anchor" href="#%E7%89%B9%E6%80%A7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>特性</h3>
 
 <ul>
-<li>高性能: 5美金的单核,768MB的<a href="https://www.vultr.com/pricing/">VPS</a>上，每秒处理UDP请求超过12K，内存占用不超过100MB，每天抓取数千万去重infohash</li>
-<li>大容量: 采用Mysql分表存储,分16张表,设计容量6千万~8千万数据</li>
-<li>支持<a href="http://www.bittorrent.org/beps/bep_0009.html">BEP0009</a>
+<li>高性能<br>
+<code>单核,768MB的[VPS](https://www.vultr.com/pricing/)上，每秒处理UDP请求超过12K，内存占用不超过100MB，每天抓取数千万去重infohash</code>
 </li>
-<li>全文搜索：采用<a href="https://github.com/elastic/elasticsearch">elasticsearch</a>实现全文索引和热度排序</li>
+<li>大容量<br>
+<code>采用Mysql分表存储,分16张表,设计容量6千万~8千万数据</code>
+</li>
+<li>全文搜索<br>
+<code>采用[elasticsearch](https://github.com/elastic/elasticsearch)实现全文索引和热度排序</code>
+</li>
 </ul>
 
 <h3>
@@ -49,39 +52,50 @@
 
 <ul>
 <li>
-<a href="https://github.com/btlike/spider">spider</a> 底层DHT网络爬虫库</li>
+<a href="https://github.com/btlike/spider">spider</a>   <code>底层DHT网络爬虫库</code>
+</li>
 <li>
-<a href="https://github.com/btlike/crawl">crawl</a> 从DHT网络中抓取活跃的infohash并存储</li>
+<a href="https://github.com/btlike/crawl">crawl</a>     <code>从DHT网络中抓取活跃的infohash与metadata并存储</code>
+</li>
 <li>
-<a href="https://github.com/btlike/storage">storage</a> 根据infohash从网络中抓取torrent并存储metadata</li>
+<a href="https://github.com/btlike/storage">storage</a> <code>根据infohash从网络中抓取torrent并存储metadata</code>
+</li>
 <li>
-<a href="https://github.com/btlike/api">api</a> 对外提供接口，响应搜索等请求</li>
+<a href="https://github.com/btlike/api">api</a>    <code>对外提供接口，响应搜索等请求</code>
+</li>
 <li>
-<a href="https://github.com/btlike/site">site</a> web网站</li>
+<a href="https://github.com/btlike/site">site</a>    <code>web网站</code>
+</li>
 </ul>
 
 <h3>
 <a id="安装准备" class="anchor" href="#%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>安装准备</h3>
 
 <ul>
-<li>安装golang</li>
-<li>安装mysql</li>
-<li>安装<a href="https://github.com/elastic/elasticsearch">elasticsearch</a>
-</li>
+<li><code>安装 golang</code></li>
+<li><code>安装 mysql</code></li>
+<li><code>安装 [elasticsearch](https://github.com/elastic/elasticsearch)</code></li>
 </ul>
 
 <h3>
 <a id="安装组件" class="anchor" href="#%E5%AE%89%E8%A3%85%E7%BB%84%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>安装组件</h3>
 
 <ul>
-<li>crawl<br>
-go get github.com/btlike/crawl</li>
-<li>api<br>
-go get github.com/btlike/api</li>
-<li>storage<br>
-go get github.com/btlike/storage</li>
-<li>site<br>
-git clone <a href="https://github.com/btlike/site.git">https://github.com/btlike/site.git</a>
+<li>
+<a href="https://github.com/btlike/crawl">crawl</a><br>
+<code>go get github.com/btlike/crawl</code>
+</li>
+<li>
+<a href="https://github.com/btlike/api">api</a><br>
+<code>go get github.com/btlike/api</code>
+</li>
+<li>
+<a href="https://github.com/btlike/storage">storage</a><br>
+<code>go get github.com/btlike/storage</code>
+</li>
+<li>
+<a href="https://github.com/btlike/site">site</a><br>
+<code>git clone https://github.com/btlike/site.git</code>
 </li>
 </ul>
 
@@ -94,19 +108,23 @@ git clone <a href="https://github.com/btlike/site.git">https://github.com/btlike
 <a id="设计思路" class="anchor" href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>设计思路</h3>
 
 <ul>
-<li>从全网尽可能多的获取infohash</li>
-<li>可配置从DHT网络，通过<a href="http://www.bittorrent.org/beps/bep_0009.html">BEP0009</a>获取资源。大部分通过资源库查询，采用流量+带宽暴力遍历</li>
-<li>极力优化内存、CPU与带宽资源</li>
-<li>随着热门资源大部分被收录，每日更新资源数从数十万逐步降低到十来万</li>
+<li><code>从全网尽可能多的获取infohash</code></li>
+<li><code>从DHT网络，通过[BEP0009](http://www.bittorrent.org/beps/bep_0009.html)获取资源</code></li>
+<li><code>通过资源库查询资源，采用流量+带宽暴力遍历</code></li>
+<li><code>极力优化内存、CPU与带宽资源</code></li>
+<li><code>随着热门资源大部分被收录，每日更新资源数从数十万逐步降低到十来万</code></li>
 </ul>
 
 <h3>
 <a id="帮助与联系" class="anchor" href="#%E5%B8%AE%E5%8A%A9%E4%B8%8E%E8%81%94%E7%B3%BB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>帮助与联系</h3>
 
-<p>在项目下提issue或联系<a href="mailto:yanyuan2046@126.com">yanyuan2046@126.com</a></p>
+<p><code>在项目下提issue或联系yanyuan2046@126.com</code></p>
       </section>
     </div>
-
+    <footer>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
